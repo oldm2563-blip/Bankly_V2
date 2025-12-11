@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <section class="menu">
+        <div class="image">
         <img src="banhead.png" alt="logo">
-    </header>
+        </div>
     <div class="login_container">
         <div class="login_box">
-            <form action="">
+            <form action="submit">
                 <h3>Login</h3>
                 <div class="input_box">
                     <input type="text" id="username" name="username" placeholder=" " required>
@@ -25,5 +26,6 @@
             </form>
         </div>
     </div>
+    </section>
 </body>
 </html>
