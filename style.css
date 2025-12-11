@@ -3,7 +3,6 @@ body {
     height: 100vh;
     margin: 0;
    background: linear-gradient(180deg, #4db8ff 0%, #0066a3 100%);
-
     font-family: 'Trebuchet MS', Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -89,4 +88,18 @@ label {
     top: -10px;
     font-size: 12px;
     color: #0077ff;
+}
+
+input[type = "submit"]{
+    border: 2px solid #0D6EFD;
+    background-color:  #0D6EFD;
+    padding: 4px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+input[type = "submit"]:hover{
+    transition: all 0.3s ease-in-out;
+    background-color:  black;
+    border: 2px solid #0D6EFD;
 }

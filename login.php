@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
         </div>
     <div class="login_container">
         <div class="login_box">
-            <form action="submit">
+            <form action="login.php" method="POST">
                 <h3>Login</h3>
                 <div class="input_box">
                     <input type="text" id="username" name="username" placeholder=" " required>
@@ -22,6 +25,9 @@
                 <div class="input_box">
                 <input type="password" id="pass" name="pass" placeholder=" " required>
                  <label for="pass">Password</label>
+                 </div>
+                 <div>
+                    <input type="submit" name="submit" id="submit" value="Login Now">
                  </div>
             </form>
         </div>
