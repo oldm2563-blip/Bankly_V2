@@ -38,9 +38,11 @@
                 <ul>
                 <?php 
                     foreach($cli_amm as $cl){
-                        echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . "</li>";
+                        echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . " <a href='edit_client.php?id=" . $cl['customers_id'] . "'>Edit</a>" ."</li>";
+                        
                     }
                 ?>
+                
                 </ul>
             </div>
     </div>
