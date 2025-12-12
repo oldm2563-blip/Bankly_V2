@@ -49,6 +49,9 @@
 </head>
 <body>
     <div class="hero">
+        <form action="dashboard.php" method="$_GET">
+            <input type="submit" name="sub" value="Log Out">
+        </form>
         <h1>Welcome Back</h1>
         <?php echo "<p>{$_SESSION['username']}</p>" ?>
     </div>
@@ -56,12 +59,16 @@
         <div class="the-board">
             <div class="cus con"><i class="fas fa-user"></i>    Total customers:
             <?php echo "<h1>{$amount_c}</h1>" ?>
+            <div class="btn"><a href="list_clients.php">View clients </a></div>
         </div>
             <div class="acc  con"><i class="fas fa-piggy-bank"></i>    Total accounts:
             <?php echo "<h1>{$amount_a}</h1>" ?>
+            <div class="btn"><a href="list_clients.php">View Accounts </a></div>
+            
         </div>
             <div class="trans con"><i class="fas fa-exchange-alt"></i>    Total transactions today:
             <?php echo "<h1>{$amount_t}</h1>" ?>
+            <div class="btn"><a href="list_clients.php">View Transactions </a></div>
         </div>
             <div class="latest con"><i class="fas fa-history"></i>    Latest transactions:
             <ul>
@@ -77,3 +84,10 @@
     
 </body>
 </html>
+<?php 
+    if(isset($_GET['sub'])){
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+?>
