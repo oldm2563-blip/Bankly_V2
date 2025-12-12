@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+   font-family: 'Trebuchet MS', Arial, sans-serif;
+   background-color: rgb(231, 231, 231);
+}
+
+.hero{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../bank.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+}
+.hero h1{
+    position: relative;
+    font-size: 150px;
+    font-weight: bolder;
+    color: white;
+    animation-name: startup;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    margin: 10px;
+}
+.hero p{
+    position: relative;
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    animation-name: startups;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    margin: 10px;
+}
+
+
+@keyframes startup{
+    0%{left: -100%;}
+    100%{left: 0;}
+}
+@keyframes startups{
+    0%{top: -100%;}
+    100%{top: 0;}
+}
+
+.board-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+}
+.the-board{
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.con{
+    background-color: aquamarine;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 20px;
+}
