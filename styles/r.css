@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+   font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.hero{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../bacc.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero h1{
+    position: relative;
+    font-size: 150px;
+    font-weight: bolder;
+    color: white;
+    animation-name: startup;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    margin: 10px;
+}
+@keyframes startup{
+    0%{left: -100%;}
+    100%{left: 0;}
+}
+
+form{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+input[type="submit"] {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #cc0000;
+}
+
+form a{
+    text-decoration: none;
+    background-color: #4d68ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+form a:hover {
+    background-color: #1f00cc;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.accounts-list{
+    width: 95%;
+    border-radius: 20px;
+    background-color: rgb(255, 250, 227);
+    box-shadow: 1px 1px 10px 10px rgb(0, 0, 0, 0.15);
+}
+
+.accounts-list li{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.accounts-list h1{
+    font-weight: bolder;
+    text-align: center;
+}
