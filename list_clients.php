@@ -5,6 +5,13 @@
         header("Location: login.php");
         exit();
     }
+    include("db.php");
+    $clients = "SELECT * FROM customers";
+    $db_clients = mysqli_query($connect, $clients);
+    $cli_amm = [];
+    while($rowr = mysqli_fetch_assoc($db_clients)){
+        $cli_amm[] = $rowr;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +26,29 @@
 </head>
 <body>
     <div class="hero">
-        <form action="dashboard.php" method="$_GET">
+        <form action="dashboard.php" method="GET">
+            <a href="dashboard.php">Home</a>
             <input type="submit" name="sub" value="Log Out">
         </form>
         <h1>Clients</h1>
     </div>
-    <div>
-
+    <div class="container">
+            <div class="customers-list">
+                <h1><i class="fas fa-user"></i>    list of customers:</h1>
+                <ul>
+                <?php 
+                    foreach($cli_amm as $cl){
+                        echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . "</li>";
+                    }
+                ?>
+                </ul>
+            </div>
     </div>
 </body>
 </html>
+
+
+
 <?php 
     if(isset($_GET['sub'])){
         session_destroy();

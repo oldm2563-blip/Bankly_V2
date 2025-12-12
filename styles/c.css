@@ -35,6 +35,12 @@ body{
     100%{left: 0;}
 }
 
+form{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 input[type="submit"] {
     background-color: #ff4d4d;
     color: white;
@@ -48,4 +54,42 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #cc0000;
+}
+
+form a{
+    text-decoration: none;
+    background-color: #4d68ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+form a:hover {
+    background-color: #1f00cc;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.customers-list{
+    width: 95%;
+    border-radius: 20px;
+    background-color: rgb(255, 250, 227);
+    box-shadow: 1px 1px 10px 10px rgb(0, 0, 0, 0.15);
+}
+
+.customers-list li{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.customers-list h1{
+    font-weight: bolder;
+    text-align: center;
 }
