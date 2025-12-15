@@ -23,11 +23,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="styles/form.css">
+=======
+>>>>>>> Stashed changes
     <title>add client</title>
 </head>
 <body>
     <form action="add_client.php" method="POST">
+<<<<<<< Updated upstream
         <div>
             <input type="text" name="name" required placeholder=" ">
             <label for="name">Full Name</label>
@@ -48,6 +52,13 @@
         </div>
         
         <input type="submit" name="subb" required placeholder=" ">
+=======
+        <input type="text" name="name" required>
+        <input type="email" name="emai" required>
+        <input type="text" name="cin" required>
+        <input type="number" name="phone" required>
+        <input type="submit" name="subb" required>
+>>>>>>> Stashed changes
     </form>
 </body>
 </html>
