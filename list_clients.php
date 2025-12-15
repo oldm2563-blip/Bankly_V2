@@ -21,15 +21,8 @@
     <link rel="stylesheet" href="styles/c.css">
     <link rel="stylesheet" href="styles/scr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <link rel="shortcut icon" href="https://i.pinimg.com/736x/81/e2/cb/81e2cb082f344dc0dd2040cf20ac506b.jpg">
-=======
 
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
     <title>clients</title>
 </head>
 <body>
