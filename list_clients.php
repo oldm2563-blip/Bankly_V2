@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="styles/scr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <link rel="shortcut icon" href="https://i.pinimg.com/736x/81/e2/cb/81e2cb082f344dc0dd2040cf20ac506b.jpg">
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -42,20 +46,14 @@
                 <ul>
                 <?php 
                     foreach($cli_amm as $cl){
-<<<<<<< Updated upstream
                         echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . " <a href='edit_client.php?id=" .$cl['customers_id']. "'>Edit</a>" ."</li>";
-=======
-                        echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . " <a href='edit_client.php?id=" . $cl['customers_id'] . "'>Edit</a>" ."</li>";
->>>>>>> Stashed changes
-                        
                     }
                 ?>
                 
                 </ul>
-<<<<<<< Updated upstream
+
                 <a href="add_client.php">Add A Client</a>
-=======
->>>>>>> Stashed changes
+
             </div>
     </div>
 </body>

@@ -1,10 +1,5 @@
 <?php
-<<<<<<< Updated upstream
-=======
 
-use Dom\Mysql;
-
->>>>>>> Stashed changes
     session_start();
     if(empty($_SESSION)){
         session_destroy();
@@ -14,21 +9,16 @@ use Dom\Mysql;
     include('db.php');
     if(empty($_GET['id'])){
         die("no id");
-<<<<<<< Updated upstream
         header("Location: list_clients.php");
         exit();
-=======
->>>>>>> Stashed changes
+
     }
     $customer_id = $_GET['id'];
 
     $checker_f = "SELECT * FROM customers WHERE customers_id = {$customer_id}";
     $fcheck = mysqli_query($connect, $checker_f);
     $f = mysqli_fetch_assoc($fcheck);
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     if(!$f){
         die("no clients with that id");
     }
@@ -48,7 +38,7 @@ use Dom\Mysql;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
+
     <link rel="stylesheet" href="styles/form.css">
     <title>edit client</title>
 </head>
@@ -70,16 +60,6 @@ use Dom\Mysql;
             <label for="phone">phone</label>
         </div>
 
-=======
-    <title>edit client</title>
-</head>
-<body>
-    <form action="edit_client.php" method="POST">
-        <input type="text" name="name" required>
-        <input type="email" name="emai" required>
-        <input type="text" name="cin" required>
-        <input type="number" name="phone" required>
->>>>>>> Stashed changes
         <input type="submit" name="sub" required>
     </form>
 </body>

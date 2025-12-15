@@ -23,11 +23,7 @@
     }
 ?> 
 <?php
-<<<<<<< Updated upstream
     $tra_num = "SELECT COUNT(*) AS amm FROM transactions WHERE DATE(transaction_date) = CURDATE()";
-=======
-    $tra_num = "SELECT COUNT(*) AS amm FROM transactions WHERE transaction_date = CURDATE()";
->>>>>>> Stashed changes
     $number_t = mysqli_query($connect, $tra_num);
     $amount_t = 0;
     if($row_t = mysqli_fetch_assoc($number_t)){
@@ -68,20 +64,12 @@
         </div>
             <div class="acc  con"><i class="fas fa-piggy-bank"></i>    Total accounts:
             <?php echo "<h1>{$amount_a}</h1>" ?>
-<<<<<<< Updated upstream
             <div class="btn"><a href="list_accounts.php">View Accounts </a></div>
-=======
-            <div class="btn"><a href="list_clients.php">View Accounts </a></div>
->>>>>>> Stashed changes
             
         </div>
             <div class="trans con"><i class="fas fa-exchange-alt"></i>    Total transactions today:
             <?php echo "<h1>{$amount_t}</h1>" ?>
-<<<<<<< Updated upstream
             <div class="btn"><a href="list_trasactions.php">View Transactions </a></div>
-=======
-            <div class="btn"><a href="list_clients.php">View Transactions </a></div>
->>>>>>> Stashed changes
         </div>
             <div class="latest con"><i class="fas fa-history"></i>    Latest transactions:
             <ul>
