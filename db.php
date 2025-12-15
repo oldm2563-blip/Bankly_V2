@@ -12,11 +12,5 @@
        $db_name,
         3307
     );
-
-       if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
-    } else {
-    //yo worjd
-    }
-
+ 
 ?>

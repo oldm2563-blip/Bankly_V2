@@ -43,6 +43,7 @@
                 ?>
                 
                 </ul>
+                <a href="add_account.php">Add an account</a>
             </div>
     </div>
 </body>

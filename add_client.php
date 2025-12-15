@@ -23,15 +23,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
     <title>add client</title>
 </head>
 <body>
     <form action="add_client.php" method="POST">
-        <input type="text" name="name" required>
-        <input type="email" name="emai" required>
-        <input type="text" name="cin" required>
-        <input type="number" name="phone" required>
-        <input type="submit" name="subb" required>
+        <div>
+            <input type="text" name="name" required placeholder=" ">
+            <label for="name">Full Name</label>
+        </div>
+        <div>
+            <input type="email" name="emai" required placeholder=" ">
+            <label for="emai">Email</label>
+        </div>
+        <div>
+            
+            <input type="text" name="cin" required placeholder=" ">
+            <label for="cin">C.I.N</label>
+        </div>
+        <div>
+        
+        <input type="number" name="phone" required placeholder=" ">
+        <label for="phone">Phone Number</label>
+        </div>
+        
+        <input type="submit" name="subb" required placeholder=" ">
     </form>
 </body>
 </html>

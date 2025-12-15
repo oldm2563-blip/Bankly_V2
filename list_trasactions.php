@@ -50,6 +50,7 @@ while($t = mysqli_fetch_assoc($transactions_result)){
                     }
                 ?>
             </ul>
+            <a href="make_transaction.php">Make A Transaction</a>
         </div>
     </div>
 </body>

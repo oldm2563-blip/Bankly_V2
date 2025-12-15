@@ -8,19 +8,26 @@ if(empty($_SESSION)){
 
 include('db.php');
 
-$accounts = mysqli_query($connect, "SELECT account_id, account_number, full_name, balance FROM accounts");
+$accounts = mysqli_query($connect, "SELECT account_id, account_number FROM accounts");
 
 if(isset($_POST['submit'])){
-    $from_id = $_POST['from_account'];
-    $to_id = $_POST['to_account'];
+    $account_id = $_POST['account'];
     $amount = $_POST['amount'];
+    $type = $_POST['transaction_type'];
 
-    mysqli_query($connect, "UPDATE accounts SET balance = balance - $amount WHERE account_id=$from_id");
-    mysqli_query($connect, "UPDATE accounts SET balance = balance + $amount WHERE account_id=$to_id");
+    if($type === 'debit'){
+        
+        mysqli_query($connect, "UPDATE accounts SET balance = balance - $amount WHERE account_id = $account_id");
+    } else {
+        // Add amount to the account
+        mysqli_query($connect, "UPDATE accounts SET balance = balance + $amount WHERE account_id = $account_id");
+    }
 
-    mysqli_query($connect, "INSERT INTO transactions (from_account, to_account, amount) VALUES ($from_id, $to_id, $amount)");
+    // Record transaction
+    mysqli_query($connect, "INSERT INTO transactions (amount, transaction_type, account_id, transaction_date) 
+        VALUES ($amount, '$type', $account_id, NOW())");
 
-    header("Location: list_transactions.php");
+    header("Location: list_trasactions.php");
     exit();
 }
 ?>
@@ -29,27 +36,28 @@ if(isset($_POST['submit'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/form.css">
     <title>Make Transaction</title>
 </head>
 <body>
     <form method="POST">
-        <select name="from_account" required>
+        <select name="account" required>
             <?php while($acc = mysqli_fetch_assoc($accounts)) {
-                echo "<option value='" . $acc['account_id'] . "'>" . $acc['account_number'] . " - " . $acc['full_name'] . "</option>";
+                echo "<option value='" . $acc['account_id'] . "'>" . $acc['account_number'] . "</option>";
             } ?>
         </select>
 
-        <select name="to_account" required>
-            <?php
-            $accounts = mysqli_query($connect, "SELECT account_id, account_number, full_name, balance FROM accounts"); // reload for second dropdown
-            while($acc = mysqli_fetch_assoc($accounts)) {
-                echo "<option value='" . $acc['account_id'] . "'>" . $acc['account_number'] . " - " . $acc['full_name'] . "</option>";
-            }
-            ?>
+        <select name="transaction_type" required>
+            <option value="debit">Debit</option>
+            <option value="credit">Credit</option>
         </select>
 
-        <input type="number" name="amount" placeholder="Amount" required>
-        <input type="submit" name="submit" value="Send">
+        <div>
+            <input type="number" name="amount" placeholder=" " required>
+            <label for="amount">Amount Of Money</label>
+        </div>
+
+        <input type="submit" name="submit" value="Submit">
     </form>
 </body>
 </html>

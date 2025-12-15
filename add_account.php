@@ -26,17 +26,25 @@ if(isset($_POST['subb'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
     <title>Document</title>
 </head>
 <body>
     <form method="POST">
-    <input type="text" name="account_number" required>
+        <div>
+            <input type="text" name="account_number" required placeholder=" ">
+            <label for="account_number">account number</label>
+        </div>
+    
     <select name="account_type" required>
     <option value="savings">savings</option>
     <option value="business">Business</option>
     <option value="checking">Checking</option>
 </select>
-    <input type="number" name="balance" required>
+<div>
+    <input type="number" name="balance" required placeholder=" ">
+    <label for="balance">Balance</label>
+</div>
     <select name="customer_id" required>
         <?php
     while ($c = mysqli_fetch_assoc($customers)) {
