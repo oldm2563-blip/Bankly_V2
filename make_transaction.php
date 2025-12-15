@@ -19,11 +19,11 @@ if(isset($_POST['submit'])){
         
         mysqli_query($connect, "UPDATE accounts SET balance = balance - $amount WHERE account_id = $account_id");
     } else {
-        // Add amount to the account
+        
         mysqli_query($connect, "UPDATE accounts SET balance = balance + $amount WHERE account_id = $account_id");
     }
 
-    // Record transaction
+    
     mysqli_query($connect, "INSERT INTO transactions (amount, transaction_type, account_id, transaction_date) 
         VALUES ($amount, '$type', $account_id, NOW())");
 

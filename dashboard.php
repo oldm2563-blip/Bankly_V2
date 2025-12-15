@@ -23,7 +23,7 @@
     }
 ?> 
 <?php
-    $tra_num = "SELECT COUNT(*) AS amm FROM transactions WHERE transaction_date = CURDATE()";
+    $tra_num = "SELECT COUNT(*) AS amm FROM transactions WHERE DATE(transaction_date) = CURDATE()";
     $number_t = mysqli_query($connect, $tra_num);
     $amount_t = 0;
     if($row_t = mysqli_fetch_assoc($number_t)){
