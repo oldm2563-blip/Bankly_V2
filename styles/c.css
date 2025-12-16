@@ -87,9 +87,19 @@ form a:hover {
 .customers-list li{
     font-weight: bolder;
     font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .customers-list h1{
     font-weight: bolder;
     text-align: center;
+}
+
+a{
+    cursor: pointer;
+    background-color: #4d68ff;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
 }
