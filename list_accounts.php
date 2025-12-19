@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/re.css">
+    <link rel="stylesheet" href="styles/ra.css">
     <link rel="stylesheet" href="styles/scr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -35,14 +35,26 @@
     <div class="container">
             <div class="accounts-list">
                 <h1><i class="fas fa-wallet"></i>     list of accounts:</h1>
-                <ul>
-                <?php 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>account_id</th>
+                            <th>account_number</th>
+                            <th>account_type</th>
+                            <th>balance</th>
+                            <th>full_name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <?php 
                     foreach($acc_amm as $ac){
-                        echo "<li>" . $ac['account_id'] . " - " . $ac['account_number'] . " - " . $ac['account_type'] . " - " . $ac['balance'] . "dh  - " . $ac['full_name'] . " <a href='edit_account.php?id=" . $ac['account_id'] . "'>Edit</a>" . " <a href='delete_account.php?id=" . $ac['account_id'] . "'>Delete</a>" ."</li>";
+                        echo "<tr>" . "<td>" . $ac['account_id'] . "</td>". "<td>" . $ac['account_number'] . "</td>". "<td>" . $ac['account_type'] . "</td>" . "<td>" . $ac['balance'] . "dh </td>" . "<td>" . $ac['full_name'] . "</td>" . "<td>" . " <a href='edit_account.php?id=" . $ac['account_id'] . "'>Edit</a>" . "</td>" . "<td>" . " <a href='delete_account.php?id=" . $ac['account_id'] . "'>Delete</a>" . "</td>" ."</tr>";
                     }
                 ?>
-                
-                </ul>
+                    </tbody>
+                </table>
                 <a href="add_account.php">Add an account</a>
             </div>
     </div>

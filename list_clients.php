@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/c.css">
+    <link rel="stylesheet" href="styles/a.css">
     <link rel="stylesheet" href="styles/scr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="shortcut icon" href="https://i.pinimg.com/736x/81/e2/cb/81e2cb082f344dc0dd2040cf20ac506b.jpg">
@@ -36,14 +36,25 @@
     <div class="container">
             <div class="customers-list">
                 <h1><i class="fas fa-user"></i>    list of customers:</h1>
-                <ul>
-                <?php 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>customers_id</th>
+                            <th>full_name</th>
+                            <th>email</th>
+                            <th>CIN</th>
+                            <th>phone</th>
+                            <th>edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <?php 
                     foreach($cli_amm as $cl){
-                        echo "<li>" . $cl['customers_id'] . " - " . $cl['full_name'] . " - " . $cl['email'] . " - " . $cl['CIN'] . " - " . $cl['phone'] . " <a href='edit_client.php?id=" .$cl['customers_id']. "'>Edit</a>" ."</li>";
+                        echo "<tr>" . '<td>' . $cl['customers_id'] . '</td>' . '<td>' . $cl['full_name'] . "</td>" . "<td>". $cl['email'] . "</td>". "<td>" . $cl['CIN'] . "</td>". "<td>" . $cl['phone'] . "</td>" . "<td>" . " <a href='edit_client.php?id=" .$cl['customers_id']. "'>Edit</a>" . "</td>" ."</tr>";
                     }
                 ?>
-                
-                </ul>
+                    </tbody>
+                </table>
 
                 <a href="add_client.php">Add A Client</a>
 

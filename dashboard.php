@@ -21,7 +21,7 @@
     if($row_a = mysqli_fetch_assoc($number_a)){
         $amount_a = $row_a['acc'];
     }
-?> 
+?>
 <?php
     $tra_num = "SELECT COUNT(*) AS amm FROM transactions WHERE DATE(transaction_date) = CURDATE()";
     $number_t = mysqli_query($connect, $tra_num);

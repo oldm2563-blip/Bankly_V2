@@ -26,7 +26,7 @@ while($t = mysqli_fetch_assoc($transactions_result)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/c.css">
+    <link rel="stylesheet" href="styles/a.css">
     <link rel="stylesheet" href="styles/scr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Transaction History</title>
@@ -43,13 +43,25 @@ while($t = mysqli_fetch_assoc($transactions_result)){
     <div class="container">
         <div class="customers-list">
             <h1><i class="fas fa-history"></i> List of Transactions:</h1>
-            <ul>
-                <?php 
+            <table>
+                <thead>
+                    <tr>
+                        <th>transaction_id</th>
+                        <th>transaction_type</th>
+                        <th>amount</th>
+                        <th>account_number</th>
+                        <th>full_name</th>
+                        <th>transaction_date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
                     foreach($transactions as $tr){
-                        echo "<li>" . $tr['transaction_id'] . " - " . $tr['transaction_type'] . " - " . $tr['amount'] . "dh - " . $tr['account_number'] . " - " . $tr['full_name'] . " - " . $tr['transaction_date'] . "</li>";
+                        echo "<tr>" . "<td>" . $tr['transaction_id'] . "</td>" . "<td>" . $tr['transaction_type'] . "</td>" . "<td>" . $tr['amount'] . "dh </td>" . "<td>" . $tr['account_number'] . "</td>" . "<td>" . $tr['full_name'] . "</td>" . "<td>" . $tr['transaction_date'] . "</td>" . "</tr>";
                     }
                 ?>
-            </ul>
+                </tbody>
+            </table>
             <a href="make_transaction.php">Make A Transaction</a>
         </div>
     </div>

@@ -13,7 +13,7 @@ body{
     background-image: url("../bclients.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,7 +80,7 @@ form a:hover {
 .customers-list{
     width: 95%;
     border-radius: 20px;
-    background-color: rgb(255, 250, 227);
+    background-color: rgb(225, 225, 225);
     box-shadow: 1px 1px 10px 10px rgb(0, 0, 0, 0.15);
 }
 
@@ -97,9 +97,21 @@ form a:hover {
 
 a{
     cursor: pointer;
-    background-color: #4d68ff;
     padding: 10px;
-    color: white;
+    color: blue;
     border-radius: 10px;
     text-decoration: none;
+    margin-top: 10px;
+}
+
+table, tr, th, td{
+    border: 1px solid;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+tr, td{
+    padding: 8px;
+    text-align: left;
 }
